@@ -3,419 +3,299 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>I'm Sorry Cutiee 🥹🫶🏻</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html,body{
-    width:100%;
-    min-height:100%;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e7, #ffeaf2, #ffd0e3);
+    font-family: "Baloo 2", cursive;
+    overflow-x: hidden;
 }
 
-body{
-    background:linear-gradient(135deg,#ffdbea,#ffc5dc,#ffeaf2);
-    font-family:'Quicksand',sans-serif;
-    overflow-x:hidden;
+/* Floating hearts */
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* ================= FLOATING HEARTS ================= */
-
-#hearts{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:0;
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear infinite;
+    opacity: .75;
+    font-size: 20px;
 }
 
-.heart{
-    position:absolute;
-    bottom:-50px;
-    animation:float 7s linear infinite;
-    opacity:.7;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:0;
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
     }
-
-    15%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:translateY(-115vh) rotate(360deg);
-        opacity:0;
+    15% { opacity: .8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
-/* ================= PAGES ================= */
-
-.page{
-    display:none;
-    min-height:100vh;
-    width:100%;
-    padding:22px 15px;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    z-index:2;
+/* Pages */
+.page {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 18px;
+    position: relative;
+    z-index: 2;
 }
 
-.page.active{
-    display:flex;
+.page.active {
+    display: flex;
 }
 
-/* ================= PINK BOX ================= */
-
-.box{
-    width:100%;
-    max-width:420px;
-    background:#ffb9d3;
-    border:3px solid rgba(255,255,255,.9);
-    border-radius:30px;
-    padding:25px 18px;
-    text-align:center;
-    box-shadow:
-        0 15px 45px rgba(126,48,82,.22),
-        inset 0 0 20px rgba(255,255,255,.18);
-    position:relative;
+/* Main cute box */
+.card {
+    width: 100%;
+    max-width: 370px;
+    background: #ffc1d9;
+    border: 3px solid #ff91bb;
+    border-radius: 30px;
+    padding: 25px 20px 28px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(190, 75, 120, .2);
+    animation: pop .7s ease;
 }
 
-.box:before{
-    content:"♡";
-    position:absolute;
-    top:-20px;
-    left:22px;
-    font-size:32px;
-    color:white;
-}
-
-.box:after{
-    content:"♡";
-    position:absolute;
-    right:23px;
-    bottom:-18px;
-    font-size:28px;
-    color:white;
-}
-
-/* ================= TEXT ================= */
-
-.title{
-    font-family:'Baloo 2',cursive;
-    font-size:29px;
-    font-weight:700;
-    color:#6d2845;
-    line-height:1.1;
-    margin-bottom:14px;
-}
-
-.text{
-    font-size:14px;
-    font-weight:600;
-    line-height:1.65;
-    color:#6d3049;
-}
-
-.click-title{
-    font-family:'Baloo 2',cursive;
-    font-size:27px;
-    font-weight:700;
-    color:#6d2845;
-    margin-bottom:15px;
-}
-
-.okna{
-    margin-top:12px;
-    font-size:17px;
-    font-weight:700;
-    color:#6d2845;
-}
-
-/* ================= PHOTOS ================= */
-
-.main-photo{
-    width:175px;
-    height:175px;
-    object-fit:cover;
-    border-radius:27px;
-    border:5px solid white;
-    box-shadow:0 8px 22px rgba(100,35,65,.2);
-    margin-bottom:17px;
-}
-
-.photo{
-    width:100%;
-    max-height:430px;
-    object-fit:cover;
-    border-radius:24px;
-    border:5px solid white;
-    box-shadow:0 10px 25px rgba(100,35,65,.2);
-    margin-bottom:10px;
-}
-
-/* ================= BUTTONS ================= */
-
-.buttons{
-    margin-top:23px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    min-height:55px;
-}
-
-button{
-    border:none;
-    padding:13px 17px;
-    border-radius:30px;
-    font-family:'Quicksand',sans-serif;
-    font-size:12px;
-    font-weight:700;
-    cursor:pointer;
-    box-shadow:0 7px 18px rgba(100,35,65,.18);
-    transition:.2s;
-}
-
-button:active{
-    transform:scale(.94);
-}
-
-.forgive{
-    background:white;
-    color:#c0527c;
-}
-
-.no{
-    background:#e98aaa;
-    color:white;
-    position:relative;
-}
-
-.next{
-    margin-top:19px;
-    background:white;
-    color:#bd4d76;
-}
-
-/* ================= APOLOGY PAGE ================= */
-
-.sad{
-    font-size:52px;
-    margin-bottom:8px;
-}
-
-.apology{
-    font-size:14px;
-    font-weight:700;
-    line-height:1.7;
-    color:#61273f;
-}
-
-/* ================= FINAL PAGE ================= */
-
-#finalPage{
-    background:#000;
-    overflow:hidden;
-}
-
-.final-box{
-    min-height:560px;
-    background:#ffb8d2;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-/* ================= BALLOONS ================= */
-
-.balloons{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:170px;
-}
-
-.balloon{
-    position:absolute;
-    width:40px;
-    height:53px;
-    border-radius:50%;
-    top:-70px;
-    animation:dropBalloon 2s ease forwards;
-}
-
-.balloon:after{
-    content:"";
-    position:absolute;
-    top:49px;
-    left:20px;
-    width:1px;
-    height:120px;
-    background:#555;
-}
-
-.red{
-    background:#ef4450;
-    left:13%;
-    animation-delay:.2s;
-}
-
-.yellow{
-    background:#ffd447;
-    left:45%;
-    animation-delay:.5s;
-}
-
-.blue{
-    background:#4285f4;
-    left:76%;
-    animation-delay:.8s;
-}
-
-@keyframes dropBalloon{
-    to{
-        top:20px;
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-/* ================= SLIDING MESSAGE ================= */
-
-.slider{
-    width:100%;
-    overflow:hidden;
-    margin-top:60px;
-    border-radius:15px;
+.cat {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    margin-bottom: 17px;
 }
 
-.message{
-    display:inline-block;
-    white-space:nowrap;
-    font-family:'Baloo 2',cursive;
-    font-size:20px;
-    font-weight:700;
-    color:#872246;
-    animation:slide 9s linear infinite;
+.title {
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #8d3159;
+    margin-bottom: 22px;
 }
 
-@keyframes slide{
-    from{
-        transform:translateX(100%);
-    }
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    min-height: 55px;
+}
 
-    to{
-        transform:translateX(-110%);
+button {
+    border: none;
+    padding: 12px 17px;
+    border-radius: 18px;
+    font-family: "Baloo 2", cursive;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+#noBtn {
+    background: white;
+    color: #d34c7f;
+    position: relative;
+}
+
+#yesBtn {
+    background: #ff6fa7;
+    color: white;
+    box-shadow: 0 5px 12px rgba(255,70,130,.25);
+}
+
+button:active {
+    transform: scale(.94);
+}
+
+/* Sorry page */
+.message {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #722443;
+    font-weight: 700;
+    text-align: left;
+    margin: 15px 4px 22px;
+}
+
+/* Choices page */
+.choice-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.choice {
+    width: 100%;
+    background: white;
+    color: #9b3c64;
+    border: 2px solid #ff8eb9;
+    font-size: 15px;
+}
+
+/* Photo pages */
+.photo-page img {
+    width: 100%;
+    max-width: 280px;
+    max-height: 330px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.okna {
+    margin-top: 15px;
+    font-size: 23px;
+    font-weight: 800;
+    color: #8b2853;
+}
+
+/* Final page */
+.final-screen {
+    background: #000;
+    overflow: hidden;
+}
+
+.final-card {
+    width: 100%;
+    max-width: 380px;
+    min-height: 520px;
+    background: #ffc2dc;
+    border: 4px solid #ff83b4;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.balloons {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.balloon {
+    font-size: 42px;
+    animation: balloonFloat 2s ease-in-out infinite alternate;
+}
+
+.balloon:nth-child(2) { animation-delay: .4s; }
+.balloon:nth-child(3) { animation-delay: .8s; }
+
+@keyframes balloonFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(12px); }
+}
+
+/* Sliding text */
+.slide-text {
+    position: absolute;
+    white-space: nowrap;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #8a2450;
+    animation: slideAcross 6s linear infinite;
+    top: 145px;
+}
+
+@keyframes slideAcross {
+    0% {
+        transform: translateX(110%);
+    }
+    100% {
+        transform: translateX(-130%);
     }
 }
 
-/* ================= FINAL HEARTS ================= */
-
-#finalHearts{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+.final-message {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.7;
+    color: #7b2148;
 }
 
-.finalHeart{
-    position:absolute;
-    font-size:23px;
-    opacity:0;
-    animation:heartSpread 1.5s ease forwards;
+.final-hearts {
+    margin-top: 20px;
+    font-size: 30px;
+    animation: heartPop 1s ease infinite alternate;
 }
 
-@keyframes heartSpread{
-
-    0%{
-        transform:scale(0);
-        opacity:0;
-    }
-
-    50%{
-        transform:scale(1.5);
-        opacity:1;
-    }
-
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
+@keyframes heartPop {
+    from { transform: scale(.9); }
+    to { transform: scale(1.15); }
 }
 
-.final-title{
-    font-family:'Baloo 2',cursive;
-    font-size:30px;
-    font-weight:700;
-    color:#671c3b;
-    margin-bottom:8px;
+.back {
+    margin-top: 20px;
+    background: white;
+    color: #bd3c70;
 }
 
-.final-sub{
-    margin-top:22px;
-    font-size:14px;
-    font-weight:700;
-    color:#6d2845;
-}
-
-.restart{
-    margin-top:20px;
-    background:white;
-    color:#bd4d76;
-    position:relative;
-    z-index:5;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:480px){
-
-    .page{
-        padding:18px 13px;
+/* Small phone screens */
+@media(max-width:360px) {
+    .card {
+        padding: 20px 15px;
     }
 
-    .box{
-        padding:23px 16px;
-        border-radius:28px;
+    .cat {
+        width: 165px;
+        height: 165px;
     }
 
-    .title{
-        font-size:27px;
+    .title {
+        font-size: 21px;
     }
 
-    .main-photo{
-        width:165px;
-        height:165px;
-    }
-
-    .photo{
-        max-height:400px;
-    }
-
-    .text,
-    .apology{
-        font-size:13px;
-    }
-
-    .final-box{
-        min-height:520px;
-    }
-
-    .message{
-        font-size:18px;
+    .message {
+        font-size: 14px;
     }
 }
 </style>
@@ -423,600 +303,410 @@ button:active{
 
 <body>
 
-<!-- FLOATING HEARTS -->
-<div id="hearts"></div>
+<!-- Floating Hearts -->
+<div class="hearts" id="hearts"></div>
 
 
-<!-- =====================================================
-     PAGE 1
-     PHOTO 1 / STARTING PHOTO
-===================================================== -->
-
+<!-- PAGE 1 -->
 <section class="page active" id="page1">
-
-<div class="box">
-
-    <!-- PHOTO 1: APNI CUTE CAT PHOTO YAHAN LAGAO -->
-    <img src="1952ccdd2af871e8e3b4dbc2d5e52fe1.jpg" class="main-photo">
-    
-
-    <div class="title">
-        IM SORRY CUTIEE🥹🫶🏻
-    </div>
-
-    <div class="text">
-        Please maan jao naaa 🥹🩷
-        <br>
-        ho jata hai yawr rudely kr deta hu bt 
-    </div>
-
-    <div class="buttons">
-
-        <button class="no" id="noBtn">
-            I will not forgive you
-        </button>
-
-        <button class="forgive" onclick="showPage('page2')">
-            It's okay cutu
-        </button>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PAGE 2
-     I WILL NOT FORGIVE YOU CLICK
-===================================================== -->
-
-<section class="page" id="page2">
-
-<div class="box">
-
-    <div class="sad">
-        🥹🫶🏻
-    </div>
-
-    <div class="apology">
-
-        I'm sorry bby dekho thoda psycho lag sakta hu
-        but main esa hi hu bohot overthinker mujhe farak
-        padta hai okna? moi enekua he fotua dabrai dabrai mariba muk okna?
-
-        <br><br>
-
-        Look Nishi I trust you a lot but ngl I’m kinda
-        hella possessive over you 😭 so yeah I might
-        react sometimes… you get me?
-
-    </div>
-
-    <button class="next" onclick="showPage('page3')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PAGE 3
-     PHOTO 2
-===================================================== -->
-
-<section class="page" id="page3">
-
-<div class="box">
-
-    <div class="click-title">
-        
-    </div>
-
-    <img src="e4c56be1deaee9f9673104701eb57ca4.jpg" class="photo">
-
-    <div class="okna">
-        okna? 🥺🫶🏻
-    </div>
-
-    <button class="next" onclick="showPage('page4')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 3 -->
-
-<section class="page" id="page4">
-
-<div class="box">
-
-    <div class="click-title"> 
-    </div>
-
-    <img src="ddb9006a352e821e81f985e0c6798890.jpg" class="photo">
-
-    <div class="okna">okna? 🥹</div>
-
-    <button class="next" onclick="showPage('page5')">
-        
-
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 4 -->
-
-<section class="page" id="page5">
-
-<div class="box">
-
-    <div class="click-title">
-        🥺</div>
-
-    <img src="c1229eaede3a7abae60c40179a196295.jpg" class="photo">
-
-    <div class="okna">okna? 👉🏻👈🏻</div>
-
-    <button class="next" onclick="showPage('page6')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 5 -->
-
-<section class="page" id="page6">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 💕</div>
-
-    <img src="a5d69d00de3b7639b8ffdbdc78b00e86.jpg" class="photo">
-
-    <div class="okna">okna? 🥹🫶🏻</div>
-
-    <button class="next" onclick="showPage('page7')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 6 -->
-
-<section class="page" id="page7">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 🫶🏻</div>
-
-    <img src="744f80f3da2143778fd658d2ace944f4.jpg" class="photo">
-
-    <div class="okna">okna cutuuu? 🥺</div>
-
-    <button class="next" onclick="showPage('page8')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 7 -->
-
-<section class="page" id="page8">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 🥹</div>
-
-    <img src="6f18079494d01801fc88b8e93d051221.jpg" class="photo">
-
-    <div class="okna">okna? 💗</div>
-
-    <button class="next" onclick="showPage('page9')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 8 -->
-
-<section class="page" id="page9">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 💗</div>
-
-    <img src="424a0ded147c41539ff2065ab8ddaa73.jpg" class="photo">
-
-    <div class="okna">okna bby? 🥺</div>
-
-    <button class="next" onclick="showPage('page10')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 9 -->
-
-<section class="page" id="page10">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 🥹🫶🏻</div>
-
-    <img src="94ad2c04048f91a8e6760d24723a4606.jpg" class="photo">
-
-    <div class="okna">okna? 😭💗</div>
-
-    <button class="next" onclick="showPage('page11')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 10 -->
-
-<section class="page" id="page11">
-
-<div class="box">
-
-    <div class="click-title">
-
-    </div>
-
-    <img src="28a2375fc2898548990dfd42f601c7d1.jpg" class="photo">
-
-    <div class="okna">okna cutiee? 🥹</div>
-
-    <button class="next" onclick="showPage('page12')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 11 -->
-
-<section class="page" id="page12">
-
-<div class="box">
-
-    <div class="click-title">CLICK ON THIS 🥺</div>
-
-    <img src="abf3198695e53dae28a67b51f2c9dba7.jpg" class="photo">
-
-    <div class="okna">okna? 🫶🏻</div>
-
-    <button class="next" onclick="showPage('page13')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 12 -->
-
-<section class="page" id="page13">
-
-<div class="box">
-
-    <div class="click-title">
-    </div>
-
-    <img src="5857d7831ec72366600c11f56fb2d088.jpg" class="photo">
-
-    <div class="okna">okna bby? 🥹🫶🏻</div>
-
-    <button class="next" onclick="showPage('page14')">
-        
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- PHOTO 13 -->
-
-<section class="page" id="page14">
-
-<div class="box">
-
-    <div class="click-title">
-    </div>
-
-    <img src="c08e0fe2f92bf7f7a6c8e90646176832.jpg" class="photo">
-
-    <div class="okna">
-        okna? 🥺🫶🏻
-    </div>
-
-    <button class="next" onclick="showPage('finalPage')">
-        ONE LAST THING 💗
-    </button>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FINAL SPECIAL PAGE
-===================================================== -->
-
-<section class="page" id="finalPage">
-
-<div class="box final-box">
-
-    <!-- BALLOONS -->
-    <div class="balloons">
-
-        <div class="balloon red"></div>
-        <div class="balloon yellow"></div>
-        <div class="balloon blue"></div>
-
-    </div>
-
-    <!-- HEARTS -->
-    <div id="finalHearts"></div>
-
-    <div class="final-title">
-        I'm Sorry 🥹🫶🏻
-    </div>
-
-    <!-- SLIDING MESSAGE -->
-    <div class="slider">
-
-        <div class="message">
-            I'm sorry okna bby? iloveuhhsm mwuahhh kissi lo yr appp 🫦
+    <div class="card">
+
+        <!-- Replace this with your cat photo -->
+        <img src="cat.jpg" class="cat" alt="Cute Cat">
+
+        <div class="title">
+            IM SORRY CUTIEE🥹🫶🏻
+        </div>
+
+        <div class="buttons">
+            <button id="noBtn">
+                I will not forgive you
+            </button>
+
+            <button id="yesBtn">
+                Its okay cutu
+            </button>
         </div>
 
     </div>
+</section>
 
-    <div class="final-sub">
-        Mujhe maff kr do yawr moinakolija 😔
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+    <div class="card">
+
+        <div class="title">
+            I'm sorry bby 🥹🫶🏻
+        </div>
+
+        <div class="message">
+            I'm sorry bby dekho thoda psycho lag sakta hu
+            but main esa hi hu bohot overthinker mujhe farak padta hai
+            Look Nishi I trust you a lot but ngl I’m kinda hella
+            possessive over you 😭 so yeah I might react sometimes…
+            you get me?
+        </div>
+
+        <button class="choice" onclick="showPage('page3')">
+            Click on this 🥹
+        </button>
+
     </div>
+</section>
 
-    <button class="restart" onclick="location.reload()">
-        
-    </button>
 
-</div>
+<!-- PHOTO PAGE 1 -->
+<section class="page photo-page" id="page3">
+    <div class="card">
+
+        <!-- Replace photo1.jpg -->
+        <img src="photo1.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page4')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 2 -->
+<section class="page photo-page" id="page4">
+    <div class="card">
+
+        <img src="photo2.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page5')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 3 -->
+<section class="page photo-page" id="page5">
+    <div class="card">
+
+        <img src="photo3.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page6')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 4 -->
+<section class="page photo-page" id="page6">
+    <div class="card">
+
+        <img src="photo4.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page7')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 5 -->
+<section class="page photo-page" id="page7">
+    <div class="card">
+
+        <img src="photo5.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page8')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 6 -->
+<section class="page photo-page" id="page8">
+    <div class="card">
+
+        <img src="photo6.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page9')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 7 -->
+<section class="page photo-page" id="page9">
+    <div class="card">
+
+        <img src="photo7.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page10')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 8 -->
+<section class="page photo-page" id="page10">
+    <div class="card">
+
+        <img src="photo8.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page11')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 9 -->
+<section class="page photo-page" id="page11">
+    <div class="card">
+
+        <img src="photo9.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page12')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 10 -->
+<section class="page photo-page" id="page12">
+    <div class="card">
+
+        <img src="photo10.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page13')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 11 -->
+<section class="page photo-page" id="page13">
+    <div class="card">
+
+        <img src="photo11.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page14')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PHOTO PAGE 12 -->
+<section class="page photo-page" id="page14">
+    <div class="card">
+
+        <img src="photo12.jpg" alt="Photo">
+
+        <div class="okna">okna? 🥹🫶🏻</div>
+
+        <button class="back" onclick="showPage('page15')">
+            Click on this 💗
+        </button>
+
+    </div>
+</section>
+
+
+<!-- FINAL PAGE -->
+<section class="page final-screen" id="page15">
+
+    <div class="final-card">
+
+        <div class="balloons">
+            <div class="balloon">🎈</div>
+            <div class="balloon">🎈</div>
+            <div class="balloon">🎈</div>
+        </div>
+
+        <div class="slide-text">
+            I'm sorry okna bby? 🥹🫶🏻 iloveuhhsm mwuahhh kissi lo yr appp 🫦
+        </div>
+
+        <div class="final-message">
+            I'm sorry bby 🥹<br>
+            Please forgive your overthinking idiot 😭🫶🏻<br>
+            I love you sooo muchhh 💗
+        </div>
+
+        <div class="final-hearts">
+            💗 💕 💖 💞 💓 💗
+        </div>
+
+        <button class="back" onclick="showPage('page1')">
+            Again? 🥹
+        </button>
+
+    </div>
 
 </section>
 
 
 <script>
 
-/* =====================================================
-   CREATE FLOATING HEARTS
-===================================================== */
-
-const hearts = document.getElementById("hearts");
-
-const heartList = [
-    "💗",
-    "💖",
-    "💕",
-    "💓",
-    "💞",
-    "💘",
-    "💝",
-    "🩷",
-    "♡",
-    "♥"
-];
-
-for(let i=0;i<40;i++){
-
-    const h = document.createElement("div");
-
-    h.className = "heart";
-
-    h.innerHTML =
-        heartList[Math.floor(Math.random()*heartList.length)];
-
-    h.style.left =
-        Math.random()*100 + "%";
-
-    h.style.fontSize =
-        (14 + Math.random()*18) + "px";
-
-    h.style.animationDuration =
-        (5 + Math.random()*7) + "s";
-
-    h.style.animationDelay =
-        Math.random()*8 + "s";
-
-    hearts.appendChild(h);
-}
-
-
-/* =====================================================
+/* --------------------------
    PAGE NAVIGATION
-===================================================== */
+-------------------------- */
 
-function showPage(id){
+function showPage(pageId) {
 
-    document.querySelectorAll(".page").forEach(page=>{
+    document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
     });
 
-    document.getElementById(id).classList.add("active");
+    document.getElementById(pageId).classList.add("active");
 
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+        top: 0,
+        behavior: "smooth"
     });
 
-    if(id === "finalPage"){
-        createFinalHearts();
-    }
 }
 
 
-/* =====================================================
-   RUNAWAY BUTTON
-   DESKTOP + MOBILE
-===================================================== */
+/* --------------------------
+   FLOATING HEARTS
+-------------------------- */
 
-const noButton =
-    document.getElementById("noBtn");
+const heartsContainer = document.getElementById("hearts");
 
-function moveButton(){
+const heartSymbols = [
+    "💗",
+    "💕",
+    "💖",
+    "💓",
+    "💞",
+    "💘",
+    "🩷"
+];
 
-    const margin = 10;
+for(let i = 0; i < 35; i++) {
 
-    const maxX =
-        window.innerWidth -
-        noButton.offsetWidth -
-        margin;
+    const heart = document.createElement("div");
 
-    const maxY =
-        window.innerHeight -
-        noButton.offsetHeight -
-        margin;
+    heart.className = "heart";
+
+    heart.innerText =
+        heartSymbols[
+            Math.floor(Math.random() * heartSymbols.length)
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        (14 + Math.random() * 18) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 7) + "s";
+
+    heart.style.animationDelay =
+        (Math.random() * 7) + "s";
+
+    heartsContainer.appendChild(heart);
+}
+
+
+/* --------------------------
+   RUN-AWAY "NO" BUTTON
+-------------------------- */
+
+const noBtn = document.getElementById("noBtn");
+
+function moveNoButton() {
+
+    const maxX = Math.min(
+        window.innerWidth - 130,
+        250
+    );
+
+    const maxY = 180;
 
     const x =
-        margin + Math.random() *
-        Math.max(1,maxX-margin);
+        (Math.random() * maxX) -
+        (maxX / 2);
 
     const y =
-        margin + Math.random() *
-        Math.max(1,maxY-margin);
+        (Math.random() * maxY) -
+        (maxY / 2);
 
-    noButton.style.position = "fixed";
-
-    noButton.style.left = x + "px";
-
-    noButton.style.top = y + "px";
-
-    noButton.style.zIndex = "9999";
+    noBtn.style.transform =
+        `translate(${x}px, ${y}px)`;
 }
 
+/* Desktop cursor */
+noBtn.addEventListener("mouseenter", moveNoButton);
 
-/* Mouse */
-
-noButton.addEventListener(
-    "mouseenter",
-    moveButton
-);
-
-
-/* Touch */
-
-noButton.addEventListener(
-    "touchstart",
-    function(e){
-
-        e.preventDefault();
-
-        moveButton();
-
-    },
-    {passive:false}
-);
+/* Smartphone touch */
+noBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveNoButton();
+});
 
 
-/* Click fallback */
+/* --------------------------
+   IF THEY SOMEHOW CLICK NO
+-------------------------- */
 
-noButton.addEventListener(
+noBtn.addEventListener("click", function() {
+    showPage("page2");
+});
+
+
+/* --------------------------
+   YES BUTTON
+-------------------------- */
+
+document.getElementById("yesBtn").addEventListener(
     "click",
-    function(e){
+    function() {
 
-        e.preventDefault();
-
-        moveButton();
+        // Go straight to the cute photo sequence
+        showPage("page3");
 
     }
 );
-
-
-/* =====================================================
-   FINAL HEART SPREAD
-===================================================== */
-
-function createFinalHearts(){
-
-    const container =
-        document.getElementById("finalHearts");
-
-    container.innerHTML = "";
-
-    const symbols = [
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "💓",
-        "💞",
-        "💘",
-        "💝",
-        "🩷",
-        "🥹"
-    ];
-
-    for(let i=0;i<55;i++){
-
-        const heart =
-            document.createElement("div");
-
-        heart.className =
-            "finalHeart";
-
-        heart.innerHTML =
-            symbols[
-                Math.floor(
-                    Math.random()*symbols.length
-                )
-            ];
-
-        heart.style.left =
-            Math.random()*100 + "%";
-
-        heart.style.top =
-            (10 + Math.random()*80) + "%";
-
-        heart.style.fontSize =
-            (16 + Math.random()*22) + "px";
-
-        heart.style.animationDelay =
-            Math.random()*2.5 + "s";
-
-        container.appendChild(heart);
-    }
-}
 
 </script>
 
