@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I'm Sorry Cutiee 🥹🫶🏻</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:linear-gradient(135deg,#ffdbea,#ffc5dc,#ffeaf2);
+    font-family:'Quicksand',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    animation:float 7s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ================= PAGES ================= */
+
+.page{
+    display:none;
+    min-height:100vh;
+    width:100%;
+    padding:22px 15px;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.page.active{
+    display:flex;
+}
+
+/* ================= PINK BOX ================= */
+
+.box{
+    width:100%;
+    max-width:420px;
+    background:#ffb9d3;
+    border:3px solid rgba(255,255,255,.9);
+    border-radius:30px;
+    padding:25px 18px;
+    text-align:center;
+    box-shadow:
+        0 15px 45px rgba(126,48,82,.22),
+        inset 0 0 20px rgba(255,255,255,.18);
+    position:relative;
+}
+
+.box:before{
+    content:"♡";
+    position:absolute;
+    top:-20px;
+    left:22px;
+    font-size:32px;
+    color:white;
+}
+
+.box:after{
+    content:"♡";
+    position:absolute;
+    right:23px;
+    bottom:-18px;
+    font-size:28px;
+    color:white;
+}
+
+/* ================= TEXT ================= */
+
+.title{
+    font-family:'Baloo 2',cursive;
+    font-size:29px;
+    font-weight:700;
+    color:#6d2845;
+    line-height:1.1;
+    margin-bottom:14px;
+}
+
+.text{
+    font-size:14px;
+    font-weight:600;
+    line-height:1.65;
+    color:#6d3049;
+}
+
+.click-title{
+    font-family:'Baloo 2',cursive;
+    font-size:27px;
+    font-weight:700;
+    color:#6d2845;
+    margin-bottom:15px;
+}
+
+.okna{
+    margin-top:12px;
+    font-size:17px;
+    font-weight:700;
+    color:#6d2845;
+}
+
+/* ================= PHOTOS ================= */
+
+.main-photo{
+    width:175px;
+    height:175px;
+    object-fit:cover;
+    border-radius:27px;
+    border:5px solid white;
+    box-shadow:0 8px 22px rgba(100,35,65,.2);
+    margin-bottom:17px;
+}
+
+.photo{
+    width:100%;
+    max-height:430px;
+    object-fit:cover;
+    border-radius:24px;
+    border:5px solid white;
+    box-shadow:0 10px 25px rgba(100,35,65,.2);
+    margin-bottom:10px;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    margin-top:23px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    min-height:55px;
+}
+
+button{
+    border:none;
+    padding:13px 17px;
+    border-radius:30px;
+    font-family:'Quicksand',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 7px 18px rgba(100,35,65,.18);
+    transition:.2s;
+}
+
+button:active{
+    transform:scale(.94);
+}
+
+.forgive{
+    background:white;
+    color:#c0527c;
+}
+
+.no{
+    background:#e98aaa;
+    color:white;
+    position:relative;
+}
+
+.next{
+    margin-top:19px;
+    background:white;
+    color:#bd4d76;
+}
+
+/* ================= APOLOGY PAGE ================= */
+
+.sad{
+    font-size:52px;
+    margin-bottom:8px;
+}
+
+.apology{
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    color:#61273f;
+}
+
+/* ================= FINAL PAGE ================= */
+
+#finalPage{
+    background:#000;
+    overflow:hidden;
+}
+
+.final-box{
+    min-height:560px;
+    background:#ffb8d2;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* ================= BALLOONS ================= */
+
+.balloons{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:170px;
+}
+
+.balloon{
+    position:absolute;
+    width:40px;
+    height:53px;
+    border-radius:50%;
+    top:-70px;
+    animation:dropBalloon 2s ease forwards;
+}
+
+.balloon:after{
+    content:"";
+    position:absolute;
+    top:49px;
+    left:20px;
+    width:1px;
+    height:120px;
+    background:#555;
+}
+
+.red{
+    background:#ef4450;
+    left:13%;
+    animation-delay:.2s;
+}
+
+.yellow{
+    background:#ffd447;
+    left:45%;
+    animation-delay:.5s;
+}
+
+.blue{
+    background:#4285f4;
+    left:76%;
+    animation-delay:.8s;
+}
+
+@keyframes dropBalloon{
+    to{
+        top:20px;
+    }
+}
+
+/* ================= SLIDING MESSAGE ================= */
+
+.slider{
+    width:100%;
+    overflow:hidden;
+    margin-top:60px;
+    border-radius:15px;
+}
+
+.message{
+    display:inline-block;
+    white-space:nowrap;
+    font-family:'Baloo 2',cursive;
+    font-size:20px;
+    font-weight:700;
+    color:#872246;
+    animation:slide 9s linear infinite;
+}
+
+@keyframes slide{
+    from{
+        transform:translateX(100%);
+    }
+
+    to{
+        transform:translateX(-110%);
+    }
+}
+
+/* ================= FINAL HEARTS ================= */
+
+#finalHearts{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.finalHeart{
+    position:absolute;
+    font-size:23px;
+    opacity:0;
+    animation:heartSpread 1.5s ease forwards;
+}
+
+@keyframes heartSpread{
+
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.final-title{
+    font-family:'Baloo 2',cursive;
+    font-size:30px;
+    font-weight:700;
+    color:#671c3b;
+    margin-bottom:8px;
+}
+
+.final-sub{
+    margin-top:22px;
+    font-size:14px;
+    font-weight:700;
+    color:#6d2845;
+}
+
+.restart{
+    margin-top:20px;
+    background:white;
+    color:#bd4d76;
+    position:relative;
+    z-index:5;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:480px){
+
+    .page{
+        padding:18px 13px;
+    }
+
+    .box{
+        padding:23px 16px;
+        border-radius:28px;
+    }
+
+    .title{
+        font-size:27px;
+    }
+
+    .main-photo{
+        width:165px;
+        height:165px;
+    }
+
+    .photo{
+        max-height:400px;
+    }
+
+    .text,
+    .apology{
+        font-size:13px;
+    }
+
+    .final-box{
+        min-height:520px;
+    }
+
+    .message{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+<div id="hearts"></div>
+
+
+<!-- =====================================================
+     PAGE 1
+     PHOTO 1 / STARTING PHOTO
+===================================================== -->
+
+<section class="page active" id="page1">
+
+<div class="box">
+
+    <!-- PHOTO 1: APNI CUTE CAT PHOTO YAHAN LAGAO -->
+    <img src="cat.jpg" class="main-photo">
+
+    <div class="title">
+        IM SORRY CUTIEE🥹🫶🏻
+    </div>
+
+    <div class="text">
+        Please maan jao naaa 🥹🩷
+        <br>
+        Itna gussa bhi mat karo cutuuu 😭🫶🏻
+    </div>
+
+    <div class="buttons">
+
+        <button class="no" id="noBtn">
+            I will not forgive you
+        </button>
+
+        <button class="forgive" onclick="showPage('page2')">
+            It's okay cutu
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2
+     I WILL NOT FORGIVE YOU CLICK
+===================================================== -->
+
+<section class="page" id="page2">
+
+<div class="box">
+
+    <div class="sad">
+        🥹🫶🏻
+    </div>
+
+    <div class="apology">
+
+        I'm sorry bby dekho thoda psycho lag sakta hu
+        but main esa hi hu bohot overthinker mujhe farak
+        padta hai.
+
+        <br><br>
+
+        Look Nishi I trust you a lot but ngl I’m kinda
+        hella possessive over you 😭 so yeah I might
+        react sometimes… you get me?
+
+    </div>
+
+    <button class="next" onclick="showPage('page3')">
+        CLICK ON THIS 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3
+     PHOTO 2
+===================================================== -->
+
+<section class="page" id="page3">
+
+<div class="box">
+
+    <div class="click-title">
+        CLICK ON THIS 🥹
+    </div>
+
+    <img src="photo2.jpg" class="photo">
+
+    <div class="okna">
+        okna? 🥺🫶🏻
+    </div>
+
+    <button class="next" onclick="showPage('page4')">
+        CONTINUE 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 3 -->
+
+<section class="page" id="page4">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 💗</div>
+
+    <img src="photo3.jpg" class="photo">
+
+    <div class="okna">okna? 🥹</div>
+
+    <button class="next" onclick="showPage('page5')">
+        CONTINUE 🫶🏻
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 4 -->
+
+<section class="page" id="page5">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🥺</div>
+
+    <img src="photo4.jpg" class="photo">
+
+    <div class="okna">okna? 👉🏻👈🏻</div>
+
+    <button class="next" onclick="showPage('page6')">
+        CONTINUE 💕
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 5 -->
+
+<section class="page" id="page6">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 💕</div>
+
+    <img src="photo5.jpg" class="photo">
+
+    <div class="okna">okna? 🥹🫶🏻</div>
+
+    <button class="next" onclick="showPage('page7')">
+        CONTINUE 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 6 -->
+
+<section class="page" id="page7">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🫶🏻</div>
+
+    <img src="photo6.jpg" class="photo">
+
+    <div class="okna">okna cutuuu? 🥺</div>
+
+    <button class="next" onclick="showPage('page8')">
+        CONTINUE 💕
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 7 -->
+
+<section class="page" id="page8">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🥹</div>
+
+    <img src="photo7.jpg" class="photo">
+
+    <div class="okna">okna? 💗</div>
+
+    <button class="next" onclick="showPage('page9')">
+        CONTINUE 🫶🏻
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 8 -->
+
+<section class="page" id="page9">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 💗</div>
+
+    <img src="photo8.jpg" class="photo">
+
+    <div class="okna">okna bby? 🥺</div>
+
+    <button class="next" onclick="showPage('page10')">
+        CONTINUE 💕
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 9 -->
+
+<section class="page" id="page10">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🥹🫶🏻</div>
+
+    <img src="photo9.jpg" class="photo">
+
+    <div class="okna">okna? 😭💗</div>
+
+    <button class="next" onclick="showPage('page11')">
+        CONTINUE 🫶🏻
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 10 -->
+
+<section class="page" id="page11">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 💕</div>
+
+    <img src="photo10.jpg" class="photo">
+
+    <div class="okna">okna cutiee? 🥹</div>
+
+    <button class="next" onclick="showPage('page12')">
+        CONTINUE 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 11 -->
+
+<section class="page" id="page12">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🥺</div>
+
+    <img src="photo11.jpg" class="photo">
+
+    <div class="okna">okna? 🫶🏻</div>
+
+    <button class="next" onclick="showPage('page13')">
+        CONTINUE 💕
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 12 -->
+
+<section class="page" id="page13">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 💗</div>
+
+    <img src="photo12.jpg" class="photo">
+
+    <div class="okna">okna bby? 🥹🫶🏻</div>
+
+    <button class="next" onclick="showPage('page14')">
+        CONTINUE 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 13 -->
+
+<section class="page" id="page14">
+
+<div class="box">
+
+    <div class="click-title">CLICK ON THIS 🥹</div>
+
+    <img src="photo13.jpg" class="photo">
+
+    <div class="okna">
+        okna? 🥺🫶🏻
+    </div>
+
+    <button class="next" onclick="showPage('finalPage')">
+        ONE LAST THING 💗
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL SPECIAL PAGE
+===================================================== -->
+
+<section class="page" id="finalPage">
+
+<div class="box final-box">
+
+    <!-- BALLOONS -->
+    <div class="balloons">
+
+        <div class="balloon red"></div>
+        <div class="balloon yellow"></div>
+        <div class="balloon blue"></div>
+
+    </div>
+
+    <!-- HEARTS -->
+    <div id="finalHearts"></div>
+
+    <div class="final-title">
+        I'm Sorry 🥹🫶🏻
+    </div>
+
+    <!-- SLIDING MESSAGE -->
+    <div class="slider">
+
+        <div class="message">
+            I'm sorry okna bby? iloveuhhsm mwuahhh kissi lo yr appp 🫦
+        </div>
+
+    </div>
+
+    <div class="final-sub">
+        Please forgive me cutuuu 🥹💗
+    </div>
+
+    <button class="restart" onclick="location.reload()">
+        AGAIN? 🫶🏻
+    </button>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   CREATE FLOATING HEARTS
+===================================================== */
+
+const hearts = document.getElementById("hearts");
+
+const heartList = [
+    "💗",
+    "💖",
+    "💕",
+    "💓",
+    "💞",
+    "💘",
+    "💝",
+    "🩷",
+    "♡",
+    "♥"
+];
+
+for(let i=0;i<40;i++){
+
+    const h = document.createElement("div");
+
+    h.className = "heart";
+
+    h.innerHTML =
+        heartList[Math.floor(Math.random()*heartList.length)];
+
+    h.style.left =
+        Math.random()*100 + "%";
+
+    h.style.fontSize =
+        (14 + Math.random()*18) + "px";
+
+    h.style.animationDuration =
+        (5 + Math.random()*7) + "s";
+
+    h.style.animationDelay =
+        Math.random()*8 + "s";
+
+    hearts.appendChild(h);
+}
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function showPage(id){
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    if(id === "finalPage"){
+        createFinalHearts();
+    }
+}
+
+
+/* =====================================================
+   RUNAWAY BUTTON
+   DESKTOP + MOBILE
+===================================================== */
+
+const noButton =
+    document.getElementById("noBtn");
+
+function moveButton(){
+
+    const margin = 10;
+
+    const maxX =
+        window.innerWidth -
+        noButton.offsetWidth -
+        margin;
+
+    const maxY =
+        window.innerHeight -
+        noButton.offsetHeight -
+        margin;
+
+    const x =
+        margin + Math.random() *
+        Math.max(1,maxX-margin);
+
+    const y =
+        margin + Math.random() *
+        Math.max(1,maxY-margin);
+
+    noButton.style.position = "fixed";
+
+    noButton.style.left = x + "px";
+
+    noButton.style.top = y + "px";
+
+    noButton.style.zIndex = "9999";
+}
+
+
+/* Mouse */
+
+noButton.addEventListener(
+    "mouseenter",
+    moveButton
+);
+
+
+/* Touch */
+
+noButton.addEventListener(
+    "touchstart",
+    function(e){
+
+        e.preventDefault();
+
+        moveButton();
+
+    },
+    {passive:false}
+);
+
+
+/* Click fallback */
+
+noButton.addEventListener(
+    "click",
+    function(e){
+
+        e.preventDefault();
+
+        moveButton();
+
+    }
+);
+
+
+/* =====================================================
+   FINAL HEART SPREAD
+===================================================== */
+
+function createFinalHearts(){
+
+    const container =
+        document.getElementById("finalHearts");
+
+    container.innerHTML = "";
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💓",
+        "💞",
+        "💘",
+        "💝",
+        "🩷",
+        "🥹"
+    ];
+
+    for(let i=0;i<55;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "finalHeart";
+
+        heart.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random()*100 + "%";
+
+        heart.style.top =
+            (10 + Math.random()*80) + "%";
+
+        heart.style.fontSize =
+            (16 + Math.random()*22) + "px";
+
+        heart.style.animationDelay =
+            Math.random()*2.5 + "s";
+
+        container.appendChild(heart);
+    }
+}
+
+</script>
+
+</body>
+</html>
